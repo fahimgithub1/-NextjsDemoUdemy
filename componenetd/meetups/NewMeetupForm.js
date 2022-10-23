@@ -12,19 +12,19 @@ function NewMeetupForm(props) {
   function submitHandler(event) {
     event.preventDefault();
 
-    const enteredTitle = titleInputRef.current.value;
-    const enteredImage = imageInputRef.current.value;
-    const enteredAddress = addressInputRef.current.value;
-    const enteredDescription = descriptionInputRef.current.value;
+    // const enteredTitle = titleInputRef.current.value;
+    // const enteredImage = imageInputRef.current.value;
+    // const enteredAddress = addressInputRef.current.value;
+    // const enteredDescription = descriptionInputRef.current.value;
 
-    const meetupData = {
-      title: enteredTitle,
-      image: enteredImage,
-      address: enteredAddress,
-      description: enteredDescription,
-    };
+    // const meetupData = {
+    //   title: enteredTitle,
+    //   image: enteredImage,
+    //   address: enteredAddress,
+    //   description: enteredDescription,
+    // };
 
-    props.onAddMeetup(meetupData);
+    // props.onAddMeetup(meetupData);
   }
 
   return (

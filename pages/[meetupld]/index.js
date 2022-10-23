@@ -1,5 +1,5 @@
 import MetupDetail from "../../componenetd/meetups/MeetupDetails";
-import { MongoClient , ObjectId} from "mongodb";
+// import { MongoClient , ObjectId} from "mongodb";
 
 
 export default function MetupDetails(props){
@@ -14,59 +14,63 @@ export default function MetupDetails(props){
 }
 
 export async function getStaticPaths(){
-    const client = await MongoClient.connect('mongodb+srv://Fahim:Fahim1234@cluster0.lgls0cr.mongodb.net/meetups?retryWrites=true&w=majority'); 
+    // const client = await MongoClient.connect('mongodb+srv://Fahim:Fahim1234@cluster0.lgls0cr.mongodb.net/meetups?retryWrites=true&w=majority'); 
     
-    const db = client.db();
+    // const db = client.db();
 
-    const meetupsCollection = db.collection('meetups');
+    // const meetupsCollection = db.collection('meetups');
 
-    const meetups = await meetupsCollection.find({},{_id: 1}).toArray(); 
+    // const meetups = await meetupsCollection.find({},{_id: 1}).toArray(); 
 
-    client.close();
+    // client.close();
 
     return{
-        fallback: false,
-        paths: meetups.map((meetup) => ({
-            params:{
-                meetupId : meetup._id.toString()
-            },
-        })),
-
-        // paths: [
-        //     { 
-        //         params:{
-        //             meetupld: 'm1',
-        //         },
+        // fallback: false,
+        // paths: meetups.map((meetup) => ({
+        //     params:{
+        //         meetupId : meetup._id.toString()
         //     },
-        //     {
-        //         params:{
-        //             meetupld: 'm2',
-        //         },
-        //     }, 
-        // ],
+        // })),
+
+        paths: [
+            { 
+                params:{
+                    meetupld: 'm1',
+                },
+            },
+            {
+                params:{
+                    meetupld: 'm2',
+                },
+            }, 
+        ],
     };
 }
 
 export async function getStaticProps(context){
-    const meetupId = context.params.meetupld;
+    // const meetupId = context.params.meetupld;
 
-    const client = await MongoClient.connect('mongodb+srv://Fahim:Fahim1234@cluster0.lgls0cr.mongodb.net/meetups?retryWrites=true&w=majority'); 
+    // const client = await MongoClient.connect('mongodb+srv://Fahim:Fahim1234@cluster0.lgls0cr.mongodb.net/meetups?retryWrites=true&w=majority'); 
     
-    const db = client.db();
+    // const db = client.db();
 
-    const meetupsCollection = db.collection('meetups');
+    // const meetupsCollection = db.collection('meetups');
 
-    const selectedMeetup = await meetupsCollection.findOne({ _id : ObjectId(meetupId)});
+    // const selectedMeetup = await meetupsCollection.findOne({ _id : ObjectId(meetupId)});
 
-    client.close();
+    // client.close();
 
     return{
         props:{
             meetupData: {
-                title: selectedMeetup.title,
-                image: selectedMeetup.image,
-                id: selectedMeetup._id.toString(),
-                address: selectedMeetup.address
+                // title: selectedMeetup.title,
+                // image: selectedMeetup.image,
+                // id: selectedMeetup._id.toString(),
+                // address: selectedMeetup.address
+                title: "hakipani",
+                image: "none",
+                id: "454",
+                address: "dhaka"
             }
         }
     }

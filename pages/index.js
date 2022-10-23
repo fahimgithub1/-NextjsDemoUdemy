@@ -68,19 +68,19 @@ export async function getStaticProps(){ //when data will not change ti will use
     // fatch data from api
     // const data = req.body;
     
-    const client = await MongoClient.connect('mongodb+srv://Fahim:Fahim1234@cluster0.lgls0cr.mongodb.net/meetups?retryWrites=true&w=majority'); 
+    // const client = await MongoClient.connect('mongodb+srv://Fahim:Fahim1234@cluster0.lgls0cr.mongodb.net/meetups?retryWrites=true&w=majority'); 
     
-    const db = client.db();
+    // const db = client.db();
 
-    const meetupsCollection = db.collection('meetups');
+    // const meetupsCollection = db.collection('meetups');
 
-    const meetups = await meetupsCollection.find().toArray(); 
+    // const meetups = await meetupsCollection.find().toArray(); 
 
-    client.close();
+    // client.close();
 
     return{
         props:{
-            meetup: meetups.map((meetup) => ({
+            meetup: DUMMY_MEETUPS.map((meetup) => ({
                 title : meetup.title,
                 image : meetup.image,
                 desciption: meetup.desciption,
