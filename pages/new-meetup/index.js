@@ -13,7 +13,7 @@ export default function NewMeetup(){
 
         // const data = await response.json();
 
-        console.log(data)
+        console.log(enteredMeetupData);
     }
 
     return(<NewMeetupForm onAddMeetup={addMeetupHandler} />);

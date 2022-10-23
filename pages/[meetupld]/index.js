@@ -6,9 +6,12 @@ export default function MetupDetails(props){
 
     return(
         <MetupDetail
-            tai= {props.meetupData.title}
-            img= {props.meetupData.image}
-            para= {props.meetupData.discipton}
+            // tai= {props.meetupData.title}
+            // img= {props.meetupData.image}
+            // para= {props.meetupData.discipton}
+            tei= "Helo warld"
+            img= ""
+            pare= "fdskfjsdkfsd"
         /> 
     );
 }

@@ -1,5 +1,5 @@
 import MeetupList from "../componenetd/meetups/MeetupList";
-import { MongoClient } from "mongodb";
+// import { MongoClient } from "mongodb";
 import Head from "next/head";
 import { Fragment } from "react";
 
@@ -45,7 +45,8 @@ export default function HomePage(props) {
                 />
            </Head>
 
-            <MeetupList meetups={props.meetup} />
+           <MeetupList meetups={DUMMY_MEETUPS} />
+            {/* <MeetupList meetups={props.meetup} /> */}
         </Fragment>
     )
 }
@@ -79,16 +80,16 @@ export async function getStaticProps(){ //when data will not change ti will use
     // client.close();
 
     return{
-        props:{
-            meetup: DUMMY_MEETUPS.map((meetup) => ({
-                title : meetup.title,
-                image : meetup.image,
-                desciption: meetup.desciption,
-                address: meetup.address,
-                id : meetup._id.toString()   
-            }))
-        },
+        // props:{
+        //     meetup: DUMMY_MEETUPS.map((meetup) => ({
+        //         title : meetup.title,
+        //         image : meetup.image,
+        //         desciption: meetup.desciption,
+        //         address: meetup.address,
+        //         id : meetup._id.toString()   
+        //     }))
+        // },
 
-        revalidate: 1
+        // revalidate: 1
     };
 }
