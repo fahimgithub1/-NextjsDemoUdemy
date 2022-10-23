@@ -1,20 +1,20 @@
-import {MongoClient} from "mongodb";
+// import {MongoClient} from "mongodb";
 
-export default async function handler(req, res){
-    if(req.method === 'POST'){
-        const data = req.body;
+// export default async function handler(req, res){
+//     if(req.method === 'POST'){
+//         const data = req.body;
     
-       const client = await MongoClient.connect('mongodb+srv://Fahim:Fahim1234@cluster0.lgls0cr.mongodb.net/meetups?retryWrites=true&w=majority'); 
+//        const client = await MongoClient.connect('mongodb+srv://Fahim:Fahim1234@cluster0.lgls0cr.mongodb.net/meetups?retryWrites=true&w=majority'); 
     
-       const db = client.db();
+//        const db = client.db();
 
-       const meetupsCollection = db.collection('meetups');
+//        const meetupsCollection = db.collection('meetups');
 
-       const result = await meetupsCollection.insertOne(data);
-       console.log(result);
+//        const result = await meetupsCollection.insertOne(data);
+//        console.log(result);
 
-       client.close();
+//        client.close();
 
-       res.status(201).json({message: 'meetup iserted!'});
-    }
-}
+//        res.status(201).json({message: 'meetup iserted!'});
+//     }
+// }
